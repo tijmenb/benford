@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "benford"
   gem.homepage = "http://github.com/tijmenb/benford"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Check the distribution if first digits in a dataset}
+  gem.description = %Q{Check if a dataset conforms to Benford's Law. More info: http://en.wikipedia.org/wiki/Benford's_law}
   gem.email = "tijmen@gmail.com"
   gem.authors = ["Tijmen Brommet"]
   # dependencies defined in Gemfile
