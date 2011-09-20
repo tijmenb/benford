@@ -1,0 +1,26 @@
+#!/usr/bin/ruby
+
+require 'pp'
+require 'lib/benford'
+
+class Float
+  def perc
+    "%.1f%" % (self * 100)
+  end
+end
+
+beginning = Time.now
+
+file = File.open(ARGV[0], "rb")
+b = Benford.new
+data = file.read.gsub(',', '').scan(/\w+/) # remove , for correct parsing of '123,456,78'
+b.load! data
+
+puts ["digit", "count", "sample", "benford", "deviation"].join("\t\t")
+
+(1..9).each do |d|
+  d = d.to_s # the digits are string
+  puts [d, b.counts[d], b.distribution[d].perc , b.law[d].perc, b.deviation[d].perc ].join("\t\t")
+end
+
+puts "-> Analysis of #{b.numbers.count} samples in #{Time.now - beginning} seconds"
