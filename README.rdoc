@@ -1,5 +1,0 @@
-= benford
-
-Little tool to check out if a dataset conforms to [url=http://en.wikipedia.org/wiki/Benford's_law]Benford's Law[/url].
-
-Usage `benford path_to_file`
